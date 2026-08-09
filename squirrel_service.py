@@ -10,10 +10,11 @@ def main():
         # data_json = str(data.to_json())
 
         for color in data_dict["Primary Fur Color"].values():
-            if color not in color_count:
-                color_count[color] = 1
-            else:
-                color_count[color] += 1
+            if str(color) != "nan":
+                if color not in color_count:
+                    color_count[color] = 1
+                else:
+                    color_count[color] += 1
 
         for color, count in color_count.items():
             print(f"{color}: {count}")
